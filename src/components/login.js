@@ -1,7 +1,7 @@
 import React from "react";
 
 // Contexto de usuario
-import UserContext from "./contexts/user";
+import UserContext from "../contexts/user";
 
 // Este componente utiliza el parámetro para mostrarlo en la interfaz
 class Login extends React.Component {

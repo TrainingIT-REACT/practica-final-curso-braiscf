@@ -37,7 +37,6 @@ class App extends Component {
             <React.StrictMode>
               <NavBar />
             </React.StrictMode>
-            <h1>Plantilla de la práctica final!</h1>
           </div>
         </UserContext.Provider>
       </Provider>

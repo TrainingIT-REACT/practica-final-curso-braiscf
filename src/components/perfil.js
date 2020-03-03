@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 // Componentes
-import UpdateName from "./UpdateName";
+import UpdateName from "./updateName";
 
 // Este componente utiliza el parámetro para mostrarlo en la interfaz
 const Perfil = ({ name }) => {

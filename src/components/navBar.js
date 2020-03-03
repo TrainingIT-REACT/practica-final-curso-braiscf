@@ -1,35 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import Loader from "react-loader-spinner";
 
 //Componentes
-import Login from "../Login";
-import Perfil from "../Perfil";
+import Login from "./login";
+import Perfil from "./perfil";
 import PrivateRoute from "../PrivateRouter";
+import AlbumDetail from "./albumDetail";
+import Player from "./player";
 
-const Home = React.lazy(() => import("./home"));
-const Albums = React.lazy(() => import("./albums"));
-
-// Rutas anidadas
-const AboutMe = () => <p>Mi nombre es Ángel!</p>;
-const AboutCourse = () => <p>Bienvenido o Bienvenida a este curso de React!</p>;
-
-// Este componente define rutas anidadas
-const About = ({ match }) => (
-  <div>
-    <p>Este ejemplo trata sobre React Router</p>
-    <p>
-      <NavLink activeClassName="active" to={`${match.url}/me`}>
-        Sobre mi
-      </NavLink>{" "}
-      <NavLink activeClassName="active" to={`${match.url}/course`}>
-        Sobre este curso
-      </NavLink>
-    </p>
-    <Route path={`${match.url}/me`} component={AboutMe} />
-    <Route path={`${match.url}/course`} component={AboutCourse} />
-  </div>
-);
+import Home from "./home";
+import Albums from "./albums";
 
 export default class NavBar extends Component {
   render() {
@@ -57,15 +37,7 @@ export default class NavBar extends Component {
                   Albums
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  activeClassName="active"
-                  to="/about"
-                  className="nav-link"
-                >
-                  Reproductor
-                </NavLink>
-              </li>
+
               <li>
                 <NavLink
                   activeClassName="active"
@@ -87,14 +59,14 @@ export default class NavBar extends Component {
             </ul>
           </nav>
 
-          <React.Suspense fallback={<Loader />}>
-            <Route path="/" exact component={Home} />
-          </React.Suspense>
-          <React.Suspense fallback={<Loader />}>
-            <Route path="/albums" component={Albums} />
-          </React.Suspense>
+          <Route path="/" exact component={Home} />
+
+          <Route path="/albums" exact component={Albums} />
+
           <Route path="/login" exact component={Login} />
-          <PrivateRoute path="/perfil" component={Perfil} />
+          <Route path="/album/:id" component={AlbumDetail} />
+          <Route path="/player" exact component={Player} />
+          <PrivateRoute path="/perfil" exact component={Perfil} />
         </div>
       </Router>
     );

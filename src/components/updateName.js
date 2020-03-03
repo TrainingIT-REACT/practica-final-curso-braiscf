@@ -2,7 +2,7 @@ import React, { createRef } from "react";
 import { connect } from "react-redux";
 
 // Acciones
-import { updateName } from "./actions/user";
+import { updateName } from "../actions/user";
 
 const UpdateName = ({ updateName }) => {
   const input = createRef();
@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
   updateName: name => dispatch(updateName(name))
 });
 
-export default connect(() => ({}), mapDispatchToProps)(UpdateName);
+export default connect(() => ({}), mapDispatchToProps, UpdateName);

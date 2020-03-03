@@ -1,9 +1,10 @@
 // Definimos la lista de acciones
 const actions = [
   //SONGS
-  "ADD_SONG",
   "LISTEN_SONG",
-  "CLEAR_SONGS",
+
+  //ALBUMS
+  "VISIT_ALBUM",
 
   // Usuarios
   "UPDATE_NAME"
