@@ -16,7 +16,7 @@ const Perfil = ({ name }) => {
   );
 };
 
-const mapStateToProps = (state /*, otherProps */) => {
+const mapStateToProps = state => {
   return {
     name: state.user.name
   };

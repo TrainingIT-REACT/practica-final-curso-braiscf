@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "enzyme";
-import Login from "../../components/login";
+import { Login } from "../../components/login";
 
 describe(Login, () => {
   describe("render", () => {

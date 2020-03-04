@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 //Componentes
 import Login from "./login";
 import Perfil from "./perfil";
-import PrivateRoute from "../PrivateRouter";
+import PrivateRouter from "../PrivateRoute";
 import AlbumDetail from "./albumDetail";
 import Player from "./player";
 
@@ -66,7 +66,7 @@ export default class NavBar extends Component {
           <Route path="/login" exact component={Login} />
           <Route path="/album/:id" component={AlbumDetail} />
           <Route path="/player" exact component={Player} />
-          <PrivateRoute path="/perfil" exact component={Perfil} />
+          <PrivateRouter path="/perfil" exact component={Perfil} />
         </div>
       </Router>
     );

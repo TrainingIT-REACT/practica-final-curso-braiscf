@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
   updateName: name => dispatch(updateName(name))
 });
 
-export default connect(() => ({}), mapDispatchToProps, UpdateName);
+export default connect(() => ({}), mapDispatchToProps)(UpdateName);

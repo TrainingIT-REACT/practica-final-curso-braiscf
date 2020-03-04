@@ -3,8 +3,8 @@ import { mount } from "enzyme";
 import store from "../../store";
 
 // Componente
-import App from "../App";
-import Home from "../../components/home";
+import { App } from "../App";
+import { Home } from "../../components/home";
 import { Provider } from "react-redux";
 
 describe(Home.WrappedComponent, () => {

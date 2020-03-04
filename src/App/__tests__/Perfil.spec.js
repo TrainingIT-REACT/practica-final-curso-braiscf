@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Perfil from "../../components/perfil";
+import { Perfil } from "../../components/perfil";
 
 describe(Perfil.WrappedComponent, () => {
   describe("shallow", () => {

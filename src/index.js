@@ -5,6 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "@babel/polyfill";
 
 ReactDOM.render(
   <main>

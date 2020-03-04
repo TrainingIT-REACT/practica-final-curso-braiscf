@@ -13,22 +13,22 @@ const PrivateRoute = ({ component: Component, ...others }) => {
         return (
           <Route
             {...others}
-            render={props =>
+            render={() =>
               // Renderizamos el componente con sus propiedades solo si el
               // usuario está identificado
               signedIn ? (
-                <Component {...props} />
+                <Component />
               ) : (
-                // Redirigimos a /login en otro caso
-                <Redirect
-                  to={{
-                    pathname: "/login",
-                    state: {
-                      message: "Por favor, haz login primero"
-                    }
-                  }}
-                />
-              )
+                  // Redirigimos a /login en otro caso
+                  <Redirect
+                    to={{
+                      pathname: "/login",
+                      state: {
+                        message: "Por favor, haz login primero"
+                      }
+                    }}
+                  />
+                )
             }
           />
         );
