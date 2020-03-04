@@ -27,6 +27,7 @@ const AlbumDetail = ({ history, match, songs, albums }) => {
       if (song.album_id === album) {
         time = time + parseInt(song.seconds);
       }
+      return null;
     });
     var minutes = Math.floor(time / 60);
     var seconds = time - minutes * 60;

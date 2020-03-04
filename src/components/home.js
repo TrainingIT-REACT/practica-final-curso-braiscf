@@ -42,7 +42,7 @@ class Home extends Component {
     return (
       <React.Fragment>
         <ErrorBoundary onReset={this.onReset} message="Ops! Algo ha salido mal">
-          <h1>Música Recomendada:</h1>
+          <h1 id="title">Música Recomendada:</h1>
           <CustomSongs />
           <h1>Toda la Música</h1>
           {this.renderSongs()}
