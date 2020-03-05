@@ -14,6 +14,8 @@ const AlbumDetail = ({ history, match, songs, albums }) => {
     song => song.album_id === parseInt(match.params.id)
   );
 
+  const cover = require('../../server/static' + albumById.cover);
+
   const goBack = e => {
     // Evitamos que evento de navegación continue
     e.preventDefault();
@@ -49,7 +51,7 @@ const AlbumDetail = ({ history, match, songs, albums }) => {
           </p>
           <p>
             Cover:
-            <img src={albumById.cover} height="42" width="42" alt="cover"></img>
+            <img src={cover.default} height="42" width="42" alt="cover"></img>
           </p>
           <p>
             Artista:
@@ -63,8 +65,8 @@ const AlbumDetail = ({ history, match, songs, albums }) => {
           <Songs songs={songsList} />
         </React.Fragment>
       ) : (
-        <Home />
-      )}
+          <Home />
+        )}
     </div>
   );
 };

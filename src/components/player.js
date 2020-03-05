@@ -2,6 +2,7 @@ import React from "react";
 
 import { connect } from "react-redux";
 
+
 const Player = ({ history, listenSong }) => {
   const goBack = e => {
     // Evitamos que evento de navegación continue
@@ -10,6 +11,8 @@ const Player = ({ history, listenSong }) => {
     history.goBack();
   };
 
+  const song = require("../../server/static" + listenSong.audio);
+
   return (
     <React.Fragment>
       <h1>Reproductor mp3 </h1>
@@ -17,7 +20,7 @@ const Player = ({ history, listenSong }) => {
         Atrás
       </button>
       <p></p>
-      <audio src={listenSong.audio} controls autoPlay></audio>
+      <audio src={song.default} controls autoPlay></audio>
     </React.Fragment>
   );
 };

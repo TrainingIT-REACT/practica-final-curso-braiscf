@@ -3,13 +3,17 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 //Componentes
 import Login from "./login";
-import Perfil from "./perfil";
+
+// Lazy components
+const Perfil = React.lazy(() => import('./perfil'));
+
 import PrivateRouter from "../PrivateRoute";
 import AlbumDetail from "./albumDetail";
 import Player from "./player";
 
 import Home from "./home";
 import Albums from "./albums";
+import Loader from "react-loader-spinner";
 
 export default class NavBar extends Component {
   render() {
@@ -66,9 +70,11 @@ export default class NavBar extends Component {
           <Route path="/login" exact component={Login} />
           <Route path="/album/:id" component={AlbumDetail} />
           <Route path="/player" exact component={Player} />
-          <PrivateRouter path="/perfil" exact component={Perfil} />
+          <React.Suspense fallback={Loader}>
+            <PrivateRouter path="/perfil" exact component={Perfil} />
+          </React.Suspense>
         </div>
-      </Router>
+      </Router >
     );
   }
 }
