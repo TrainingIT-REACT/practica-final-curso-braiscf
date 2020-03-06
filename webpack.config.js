@@ -7,7 +7,6 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/index.js',
-    sw: './src/sw.js',
     vendor: ['react', 'react-dom', 'react-router-dom']
   },
 
@@ -23,6 +22,10 @@ module.exports = {
         loader: "babel-loader"
       },
       {
+        test: /\.(gif|svg)$/i,
+        loader: "file-loader?name=[name].[ext]"
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
       },
@@ -34,12 +37,7 @@ module.exports = {
         test: /\.(jpg|png)$/,
         use: {
           loader: 'url-loader',
-        },
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
-        exclude: /node_modules/,
-        use: ['file-loader?name=[name].[ext]']
+        }
       }
     ]
   },
